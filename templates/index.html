@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Beer App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <section class="hero is-dark is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Random Beer App!
+        </h1>
+        <h2 class="subtitle">
+          What will it be today?
+        </h2>
+      </div>
+      <br>
+      <div class="container">
+        <button class="button is-large" onClick="window.location.reload();">Go!</button>
+      </div>
+    </div>
+  </section>
+  <body>
+  <section class="section">
+    <div class="container">
+        <div class="content is-medium">
+            <!-- <h3>{{ beer.id }}</h3> NOT USING ID -->
+            <h1>{{ beer.name }}</h1>
+            <h4>{{ beer.alchohol_pc }} %</h4>
+            <h5>pH: {{beer.ph }} </h5>
+            <p text_align="center"><b>{{ beer.desc }}</b></p>
+            <h5>Best served with:</h5>
+            <p>{{ beer.foodpair }}</p>
+        </div>
+    </div>
+  </section>
+
+  <section class="ing_and_brewer_tips">
+      <div class="container">
+          <div class="content is-medium">
+              <h1>This Beer has:</h1>
+              
+              {% for item in beer.ingredients %}
+                {{ item.capitalize() }}
+              {% endfor %}
+              
+              <br>
+              <h3>Brewer says..</h3>
+              <h4>{{ beer.brewers_tips}}</h4>
+          </div>
+      </div>
+  </section>
+
+  </body>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Random Beer App</strong> by <a href="https://github.com/Srikanthpai5" target="_blank" >SP</a> with &#10084;&#65039;.
+      </p>
+    </div>
+  </footer>
+</html>
